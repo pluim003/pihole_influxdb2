@@ -1,0 +1,13 @@
+version: '2'
+services:
+  pihole_influx:
+    build: .
+    container_name: pihole_influx
+    environment:
+      - INFLUXDB_V2_URL=127.0.0.1:8086
+      - INFLUXDB_V2_TOKEN=<token>
+      - INFLUXDB_V2_ORG=my-org
+      - INFLUXDB_BUCKET=pihole
+      - DELAY=600
+      - PIHOLE_HOSTS=pi.hole,pihole2
+      - PIHOLE_TOKENS=bla,bla
